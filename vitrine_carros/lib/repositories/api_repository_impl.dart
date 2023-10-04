@@ -14,7 +14,7 @@ class ApiRepositoryImpl implements ApiRepository {
     try {
       final token = await getToken();
       final response = await _dio.get(
-        '$baseUrl/carros',
+        '$baseUrl/carros/carros',
         options: Options(
           headers: {
             'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ class ApiRepositoryImpl implements ApiRepository {
     try {
       final token = await getToken();
       await _dio.delete(
-        "$baseUrl/carros/${carro.id}",
+        "$baseUrl/carros/carros/${carro.id}",
         options: Options(
           headers: {
             'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ class ApiRepositoryImpl implements ApiRepository {
   @override
   Future<void> deleteUser(User user) async {
     try {
-      await _dio.delete("$baseUrl/users/${user.id}");
+      await _dio.delete("$baseUrl/users/users/${user.id}");
     } on DioException catch (e) {
       throw Exception(e);
     }
@@ -62,7 +62,7 @@ class ApiRepositoryImpl implements ApiRepository {
     try {
       final token = await getToken();
       final res = await _dio.get(
-        "$baseUrl/carros/${carro.id}",
+        "$baseUrl/carros/carros/${carro.id}",
         options: Options(
           headers: {
             'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ class ApiRepositoryImpl implements ApiRepository {
   @override
   Future<List<User>> getUsers() async {
     try {
-      final response = await _dio.get('$baseUrl/users');
+      final response = await _dio.get('$baseUrl/users/users');
       return (response.data as List).map((user) => User.fromMap(user)).toList();
     } on DioException catch (e) {
       throw Exception(e);
@@ -91,7 +91,7 @@ class ApiRepositoryImpl implements ApiRepository {
     final token = await getToken();
     try {
       await _dio.post(
-        '$baseUrl/carros',
+        '$baseUrl/carros/carros',
         data: carro.toMap(), // Convertendo o objeto carro para um mapa.
         options: Options(
           headers: {
@@ -115,7 +115,7 @@ class ApiRepositoryImpl implements ApiRepository {
   Future<void> registerUser(User user) async {
     try {
       await _dio.post(
-        '$baseUrl/register',
+        '$baseUrl/auth/register',
         data: user.toMap(), // Convertendo o objeto carro para um mapa.
         options: Options(
           headers: {'Content-Type': 'application/json'},
@@ -131,7 +131,7 @@ class ApiRepositoryImpl implements ApiRepository {
     final token = await getToken();
     try {
       final res = await _dio.put(
-        '$baseUrl/carros/${carro.id}',
+        '$baseUrl/carros/carros/${carro.id}',
         data: carro.toMap(), // Convertendo o objeto carro para um mapa.
         options: Options(
           headers: {
@@ -151,7 +151,7 @@ class ApiRepositoryImpl implements ApiRepository {
     final token = await getToken();
     try {
       final res = await _dio.put(
-        '$baseUrl/users/${user.id}',
+        '$baseUrl/users/users/${user.id}',
         data: user.toMap(), // Convertendo o objeto usuário para um mapa.
         options: Options(
           headers: {
@@ -176,7 +176,7 @@ class ApiRepositoryImpl implements ApiRepository {
   Future<void> loginUser(User user) async {
     try {
       final response = await _dio.post(
-        '$baseUrl/login',
+        '$baseUrl/auth/login',
         data: user.toMap(),
         options: Options(
           headers: {
@@ -209,7 +209,7 @@ class ApiRepositoryImpl implements ApiRepository {
       final userId = await getUserId();
       if (token == null || userId == null) return null;
 
-      final response = await _dio.get('$baseUrl/users/$userId',
+      final response = await _dio.get('$baseUrl/users/users/$userId',
           options: Options(
             headers: {
               'Authorization': 'Bearer $token',
