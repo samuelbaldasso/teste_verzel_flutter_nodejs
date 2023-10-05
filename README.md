@@ -89,15 +89,23 @@ Siga o padrão desses exemplos abaixo, caso deseje utilizar o Postman ou Insomni
     "preco": 4000.00,
     "descricao": "Carro extremamente confiável e barato!!",
     "imagem_url": "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjY0MzM3L0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNjkyODM2OTA0NzgyLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTB9fX0="
+}
 
+{
+    "marca": "Hyundai",
+    "modelo": "Creta",
+    "ano": 2020,
+    "preco": 88899.00,
+    "descricao": "Carro extremamente confiável e barato!!",
+    "imagem_url": "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjgwMTMwL0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNjk1ODY2MzQwMTM4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTB9fX0="
 }
 
 ## Usuários
 
 {
-    "email": "sam@gmail.com",
-    "nome": "Samuel B",
-    "password": "123456",
+    "email": "samuel@gmail.com",
+    "nome": "Samuel Baldasso",
+    "senha": "123456",
     "imagem_url": "https://images.prd.kavak.io/eyJidWNrZXQiOiJrYXZhay1pbWFnZXMiLCJrZXkiOiJpbWFnZXMvMjY0MzM3L0VYVEVSSU9SLWZyb250U2lkZVBpbG90TmVhci0xNjkyODM2OTA0NzgyLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjU0MCwiaGVpZ2h0IjozMTB9fX0="
 }
 
