@@ -6,7 +6,7 @@ Este é um teste de aptidão para a vaga de Desenvolvedor Fullstack Flutter Plen
 
 ## Assets
 
-Acesse esta pasta para saber mais sobre os requisitos da vaga, assim como os requisitos do teste de aptidão.
+Acesse a pasta "assets" do projeto para saber mais sobre os requisitos da vaga, assim como os requisitos do teste de aptidão.
 
 ---
 
