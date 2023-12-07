@@ -12,12 +12,17 @@ const {expressjwt} = require("express-jwt");
 
 const secret = require("./config/secret");
 
-const authenticateJWT = expressjwt({ secret: secret, algorithms: ["HS256"], });
+const authenticateJWT = expressjwt({secret: secret, algorithms: ["HS256"],});
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./controllers/apiDocController');
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require("./routes/userRoutes");
 const carRoutes = require("./routes/carRoutes");
 
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use("/carros", authenticateJWT, carRoutes);
@@ -35,8 +40,8 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ error: 'Erro interno do servidor.' });
+    res.status(500).json({error: 'Erro interno do servidor.'});
 });
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
